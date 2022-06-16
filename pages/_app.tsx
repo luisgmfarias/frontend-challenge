@@ -1,9 +1,16 @@
-import { globalStyles } from '../styles/global';
-import type { AppProps } from 'next/app'
+import { globalStyles } from "../styles/global";
+import type { AppProps } from "next/app";
+import { Context } from "../contexts/context";
+import React from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   globalStyles();
-  return <Component {...pageProps} />
+  const [state, setState] = React.useState({});
+  return (
+    <Context.Provider value={{state, setState}}>
+      <Component {...pageProps} />
+    </Context.Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;
