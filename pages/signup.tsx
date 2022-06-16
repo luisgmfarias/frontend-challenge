@@ -5,7 +5,6 @@ import { Rectangle } from "../components/Rectangle";
 import { Text } from "../components/Text";
 import { colors } from "../styles/colors";
 
-
 export const SignupPage: NextPage = () => {
   return (
     <Container>
@@ -23,9 +22,17 @@ export const SignupPage: NextPage = () => {
   );
 };
 
-
 const RightContainer = styled("div", {
   marginLeft: "170px",
+
+  "@media (max-width:1280px)": {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: "0px",
+    marginTop: "50px",
+  },
 });
 
 const Container = styled("div", {
@@ -38,4 +45,9 @@ const Container = styled("div", {
   backgroundImage: "url(/globe.svg)",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "right",
+
+  "@media (max-width:1280px)": {
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
 });

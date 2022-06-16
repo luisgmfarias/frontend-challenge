@@ -3,7 +3,7 @@ import { colors } from "../styles/colors";
 import { Text } from "../components/Text";
 import { Rectangle } from "../components/Rectangle";
 import { Context } from "../contexts/context";
-import { useContext} from "react";
+import { useContext } from "react";
 
 export default function SignupPage() {
   const { state } = useContext<any>(Context);
@@ -69,6 +69,10 @@ const FeedbackContainer = styled("div", {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+
+  "@media (max-width:1280px)": {
+    width: "90%",
+  },
 });
 
 const IconName = styled("div", {

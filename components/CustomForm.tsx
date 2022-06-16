@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { styled } from "@stitches/react";
 import { colors } from "../styles/colors";
@@ -157,7 +157,9 @@ export const CustomForm: React.FC<{}> = () => {
               placeholder="Bio"
               error={errors.bio && touched.bio}
             />
-            <Button type="submit">Cadastrar</Button>
+            <div style={{ display: "flex", width:"100%" }}>
+              <Button type="submit">Cadastrar</Button>
+            </div>
             <Text color="dark100" variant="light100" align="center">
               <Checkbox type="checkbox" name="receiveNotifications" />
               Desejo receber notificações
@@ -178,6 +180,10 @@ const Container = styled("div", {
   border: `2px solid ${colors.dark900}`,
   padding: "54px 77px",
   borderRadius: "8px",
+
+  "@media (max-width:1280px)": {
+    width: "90%",
+  },
 });
 
 const FieldContainer = styled(Field, {
@@ -201,7 +207,7 @@ const FieldContainer = styled(Field, {
 const Button = styled("button", {
   width: "100%",
   backgroundColor: colors.primary500,
-  padding: "19px 240px",
+  padding: "19px 0px",
   border: "none",
   cursor: "pointer",
   marginBottom: "44px",
